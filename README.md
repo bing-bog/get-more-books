@@ -1,1 +1,1 @@
-this is also a repost of some code for a game on my main account
+this is also a repost for my school account of some code for a game from my main account
