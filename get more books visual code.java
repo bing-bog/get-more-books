@@ -7,7 +7,8 @@ Button leave;
 Button left;
 Button Back;
 Button home;
-Button library;
+Button libraryHall;
+Button bookshelf1;
 Button book1;
 Button book2;
 Button book3;
@@ -81,6 +82,8 @@ void setup() {
   rect(100, 250, 160, 250);
   ellipse(150, 170, 10, 10);
   ellipse(200, 180, 10, 10);
+  fill(114, 70, 70);
+  rect(410, 550, 230, 60);
 }
 
 void draw() {
@@ -126,7 +129,10 @@ void talk() {
   rect(100, 250, 160, 250);
   ellipse(150, 170, 10, 10);
   ellipse(200, 180, 10, 10);
+  fill(114, 70, 70);
+  rect(410, 550, 230, 60);
 
+  fill(1000, 1000, 1000);
   rect(350, 440, 330, 150);
   rect(350, 440, 70, 30);
   fill(10, 10, 10);
@@ -220,11 +226,7 @@ void left() {
   fill(1000, 1000, 0);
   ellipse(10, 10, 200, 200);
 
-  if (bookTwo==1) {
-    book2.remove();
-  }
-
-  library = sk.addButton("library")
+  libraryHall = sk.addButton("libraryHall")
     .setPosition(300, 400)
     .setSize(100, 200);
 }
@@ -272,6 +274,9 @@ void home() {
   rect(100, 250, 160, 250);
   ellipse(150, 170, 10, 10);
   ellipse(200, 180, 10, 10);
+  fill(114, 70, 70);
+  rect(410, 550, 230, 60);
+
 
   fill(10, 10, 10);
   text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 50, 50);
@@ -357,7 +362,7 @@ void home() {
     rect(410, 60, 15, 80);
     rect(425, 60, 15, 80);
     fill(175, 100, 255);
-        rect(440, 60, 15, 80);
+    rect(440, 60, 15, 80);
     rect(455, 60, 15, 80);
     fill(0, 1000, 0);
     rect(470, 60, 15, 80);
@@ -373,7 +378,7 @@ void home() {
     rect(410, 60, 15, 80);
     rect(425, 60, 15, 80);
     fill(175, 100, 255);
-        rect(440, 60, 15, 80);
+    rect(440, 60, 15, 80);
     rect(455, 60, 15, 80);
     fill(0, 1000, 0);
     rect(470, 60, 15, 80);
@@ -424,196 +429,58 @@ void home() {
     .setSize(50, 30);
 }
 
+void libraryHall() {
+  background(230, 235, 190);
+  libraryHall.remove();
 
-void book1() {
-  book1.remove();
-  bookOne++;
-  if (bookOne>=2) {
-    bookOne--;
-    println("you already have this book");
-  } else {
-    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+  fill(135, 77, 47);
+  rect(90, 190, 220, 420);
+  fill(150, 75, 0);
+  rect(0, 600, 699, 699);
+  stroke(10, 10, 10);
+  fill(150, 75, 0);
+  rect(1, 600, 697, 697);
+  fill(130, 80, 80);
+  rect(400, 50, 250, 570);
+  fill(150, 75, 75);
+  rect(410, 60, 230, 550);
+  strokeWeight(1);
+  line(640, 150, 410, 150);
+  line(640, 140, 410, 140);
+  line(640, 240, 410, 240);
+  line(640, 250, 410, 250);
+  line(640, 340, 410, 340);
+  line(640, 350, 410, 350);
+  line(640, 440, 410, 440);
+  line(640, 450, 410, 450);
+  line(640, 540, 410, 540);
+  line(640, 550, 410, 550);
+  fill(114, 70, 70);
+  rect(410, 550, 230, 60);
+
+  for (int bungo = 410; bungo <= 625; ) {
+    fill(255, 128, 0);
+    rect(bungo, 450, 15, 90);
+    fill(51, 255, 153);
+    rect(bungo, 350, 15, 90);
+    fill(204, 204, 255);
+    rect(bungo, 250, 15, 90);
+    fill(204, 255, 153);
+    rect(bungo, 150, 15, 90);
+    fill(255, 102, 178);
+    rect(bungo, 60, 15, 80);
+    bungo = bungo + 15;
   }
 
-  stroke(230, 235, 190);
-  fill(230, 235, 190);
-  rect(10, 10, 150, 38);
-  fill(10, 10, 10);
-  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+  bookshelf1 = sk.addButton("bookshelf1")
+    .setPosition(100, 200)
+    .setSize(200, 400);
 }
 
-void book2() {
-  book2.remove();
-
-  bookTwo++;
-
-  if (bookTwo >= 2) {
-    println("you already have this book");
-    bookTwo--;
-  } else {
-    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
-  }
-
-  stroke(230, 235, 190);
-  fill(230, 235, 190);
-  rect(10, 10, 150, 38);
-  fill(10, 10, 10);
-  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
-}
-
-void book3() {
-  book3.remove();
-
-  bookThree++;
-
-  if (bookThree >= 2) {
-    println("you already have this book");
-    bookThree--;
-  } else {
-    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
-  }
-
-  stroke(230, 235, 190);
-  fill(230, 235, 190);
-  rect(10, 10, 150, 38);
-  fill(10, 10, 10);
-  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
-}
-
-void book4() {
-  book4.remove();
-
-  bookFour++;
-
-  if (bookFour >= 2) {
-    println("you already have this book");
-    bookFour--;
-  } else {
-    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
-  }
-
-  stroke(230, 235, 190);
-  fill(230, 235, 190);
-  rect(10, 10, 150, 38);
-  fill(10, 10, 10);
-  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
-}
-
-void book5() {
-  book5.remove();
-
-  bookFive++;
-
-  if (bookFive >= 2) {
-    println("you already have this book");
-    bookFive--;
-  } else {
-    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
-  }
-
-  stroke(230, 235, 190);
-  fill(230, 235, 190);
-  rect(10, 10, 150, 38);
-  fill(10, 10, 10);
-  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
-}
-
-void book6() {
-  book6.remove();
-
-  bookSix++;
-
-  if (bookSix >= 2) {
-    println("you already have this book");
-    bookSix--;
-  } else {
-    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
-  }
-
-  stroke(230, 235, 190);
-  fill(230, 235, 190);
-  rect(10, 10, 150, 38);
-  fill(10, 10, 10);
-  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
-}
-
-void book7() {
-  book7.remove();
-
-  bookSeven++;
-
-  if (bookSeven >= 2) {
-    println("you already have this book");
-    bookSeven--;
-  } else {
-    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
-  }
-
-  stroke(230, 235, 190);
-  fill(230, 235, 190);
-  rect(10, 10, 150, 38);
-  fill(10, 10, 10);
-  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
-}
-void book8() {
-  book8.remove();
-
-  bookEight++;
-
-  if (bookEight >= 2) {
-    println("you already have this book");
-    bookEight--;
-  } else {
-    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
-  }
-
-  stroke(230, 235, 190);
-  fill(230, 235, 190);
-  rect(10, 10, 150, 38);
-  fill(10, 10, 10);
-  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
-}
-void book9() {
-  book9.remove();
-
-  bookNine++;
-
-  if (bookNine >= 2) {
-    println("you already have this book");
-    bookTwo--;
-  } else {
-    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
-  }
-
-  stroke(230, 235, 190);
-  fill(230, 235, 190);
-  rect(10, 10, 150, 38);
-  fill(10, 10, 10);
-  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
-}
-void book10() {
-  book10.remove();
-
-  bookTen++;
-
-  if (bookTen >= 2) {
-    println("you already have this book");
-    bookTen--;
-  } else {
-    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
-  }
-
-  stroke(230, 235, 190);
-  fill(230, 235, 190);
-  rect(10, 10, 150, 38);
-  fill(10, 10, 10);
-  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
-}
-
-void library() {
+void bookshelf1() {
   background(230, 235, 190);
   leave.remove();
-  library.remove();
+  bookshelf1.remove();
 
   fill(150, 75, 0);
   rect(0, 600, 699, 699);
@@ -632,8 +499,8 @@ void library() {
   line(640, 450, 60, 450);
   line(640, 540, 60, 540);
   line(640, 550, 60, 550);
-
-
+  fill(114, 70, 70);
+  rect(60, 550, 580, 60);
 
   for (int space = 60; space <= 625; ) {
     fill(0, 1000, 0);
@@ -648,10 +515,6 @@ void library() {
     rect(space, 60, 15, 80);
     space = space + 15;
   }
-
-  home = sk.addButton("home")
-    .setPosition(330, 10)
-    .setSize(50, 30);
 
   book1 = sk.addButton("book1")
     .setPosition(405, 60)
@@ -692,6 +555,261 @@ void library() {
   book10 = sk.addButton("book10")
     .setPosition(435, 150)
     .setSize(15, 90);
+}
+
+void book1() {
+  book1.remove();
+  bookOne++;
+  if (bookOne>=2) {
+    bookOne--;
+    println("you already have this book");
+  } else {
+    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+  }
+
+  stroke(230, 235, 190);
+  fill(230, 235, 190);
+  rect(10, 10, 150, 38);
+  fill(10, 10, 10);
+  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+
+
+  if (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen == 10) {
+    home = sk.addButton("home")
+      .setPosition(330, 10)
+      .setSize(50, 30);
+  }
+}
+
+void book2() {
+  book2.remove();
+  bookTwo++;
+
+  if (bookTwo >= 2) {
+    println("you already have this book");
+    bookTwo--;
+  } else {
+    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+
+
+    if (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen == 10) {
+      home = sk.addButton("home")
+        .setPosition(330, 10)
+        .setSize(50, 30);
+    }
+  }
+
+  stroke(230, 235, 190);
+  fill(230, 235, 190);
+  rect(10, 10, 150, 38);
+  fill(10, 10, 10);
+  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+}
+
+void book3() {
+  book3.remove();
+
+  bookThree++;
+
+  if (bookThree >= 2) {
+    println("you already have this book");
+    bookThree--;
+  } else {
+    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+  }
+
+  stroke(230, 235, 190);
+  fill(230, 235, 190);
+  rect(10, 10, 150, 38);
+  fill(10, 10, 10);
+  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+
+
+  if (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen == 10) {
+    home = sk.addButton("home")
+      .setPosition(330, 10)
+      .setSize(50, 30);
+  }
+}
+
+void book4() {
+  book4.remove();
+
+  bookFour++;
+
+  if (bookFour >= 2) {
+    println("you already have this book");
+    bookFour--;
+  } else {
+    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+  }
+
+  stroke(230, 235, 190);
+  fill(230, 235, 190);
+  rect(10, 10, 150, 38);
+  fill(10, 10, 10);
+  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+
+
+  if (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen == 10) {
+    home = sk.addButton("home")
+      .setPosition(330, 10)
+      .setSize(50, 30);
+  }
+}
+
+void book5() {
+  book5.remove();
+
+  bookFive++;
+
+  if (bookFive >= 2) {
+    println("you already have this book");
+    bookFive--;
+  } else {
+    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+  }
+
+  stroke(230, 235, 190);
+  fill(230, 235, 190);
+  rect(10, 10, 150, 38);
+  fill(10, 10, 10);
+  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+
+
+  if (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen == 10) {
+    home = sk.addButton("home")
+      .setPosition(330, 10)
+      .setSize(50, 30);
+  }
+}
+
+void book6() {
+  book6.remove();
+
+  bookSix++;
+
+  if (bookSix >= 2) {
+    println("you already have this book");
+    bookSix--;
+  } else {
+    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+  }
+
+  stroke(230, 235, 190);
+  fill(230, 235, 190);
+  rect(10, 10, 150, 38);
+  fill(10, 10, 10);
+  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+
+
+  if (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen == 10) {
+    home = sk.addButton("home")
+      .setPosition(330, 10)
+      .setSize(50, 30);
+  }
+}
+
+void book7() {
+  book7.remove();
+
+  bookSeven++;
+
+  if (bookSeven >= 2) {
+    println("you already have this book");
+    bookSeven--;
+  } else {
+    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+  }
+
+  stroke(230, 235, 190);
+  fill(230, 235, 190);
+  rect(10, 10, 150, 38);
+  fill(10, 10, 10);
+  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+
+
+  if (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen == 10) {
+    home = sk.addButton("home")
+      .setPosition(330, 10)
+      .setSize(50, 30);
+  }
+}
+void book8() {
+  book8.remove();
+
+  bookEight++;
+
+  if (bookEight >= 2) {
+    println("you already have this book");
+    bookEight--;
+  } else {
+    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+  }
+
+  stroke(230, 235, 190);
+  fill(230, 235, 190);
+  rect(10, 10, 150, 38);
+  fill(10, 10, 10);
+  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+
+
+  if (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen == 10) {
+    home = sk.addButton("home")
+      .setPosition(330, 10)
+      .setSize(50, 30);
+  }
+}
+
+void book9() {
+  book9.remove();
+
+  bookNine++;
+
+  if (bookNine >= 2) {
+    println("you already have this book");
+    bookTwo--;
+  } else {
+    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+  }
+
+  stroke(230, 235, 190);
+  fill(230, 235, 190);
+  rect(10, 10, 150, 38);
+  fill(10, 10, 10);
+  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+
+
+  if (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen == 10) {
+    home = sk.addButton("home")
+      .setPosition(330, 10)
+      .setSize(50, 30);
+  }
+}
+void book10() {
+  book10.remove();
+
+  bookTen++;
+
+  if (bookTen >= 2) {
+    println("you already have this book");
+    bookTen--;
+  } else {
+    println("you have " + (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen) + " books");
+  }
+
+  stroke(230, 235, 190);
+  fill(230, 235, 190);
+  rect(10, 10, 150, 38);
+  fill(10, 10, 10);
+  text(bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen + " / 10 books", 10, 30);
+
+
+  if (bookOne + bookTwo + bookThree + bookFour + bookFive + bookSix + bookSeven + bookEight + bookNine + bookTen == 10) {
+    home = sk.addButton("home")
+      .setPosition(330, 10)
+      .setSize(50, 30);
+  }
 }
 
 void finish() {
